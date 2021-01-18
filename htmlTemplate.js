@@ -1,5 +1,5 @@
 const generateTemplate = ({response}) => {
-    return 
+    return (
         `<!DOCTYPE html>
     <html lang="en">
     ​
@@ -24,6 +24,7 @@ const generateTemplate = ({response}) => {
     </body>
     ​
     </html>`
+    )
     ;    
 
 };

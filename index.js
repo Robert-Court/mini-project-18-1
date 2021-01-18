@@ -33,13 +33,18 @@ const askQuestions = () => {
     ]);
 };
 
-const init = async() => {
-    const answers = await askQuestions();
-    const generateTemplate = generateTemplate(answers);
+//const init = async() => {
+    //const answers = await askQuestions();
+    //const generateTemplate = generateTemplate(answers);
 
-    fs.writeFile("htmlTemplate.html", generateTemplate.trim(), (error) => {
-        console.log('successfully wrote file');
-    });
-}
+    //fs.writeFile("htmlTemplate.html", generateTemplate.trim(), (error) => {
+        //console.log('successfully wrote file');
+    //});
+//}
 
-init();
+//init();
+
+askQuestions()
+    .then((answers) =>writeFileAsync('index.html', generateTemplate(answers)))
+    .then(() => console.log('Success!'))
+    .then((err) => console.log(err));
